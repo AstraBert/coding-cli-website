@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables - Bee Theme Colors */
+:root {
+  /* Primary colors from the bee image */
+  --aw-color-primary: #F4D03F; /* Bee yellow */
+  --aw-color-secondary: #FF6B9D; /* Coral pink from text */
+  --aw-color-accent: #87CEEB; /* Light blue from wings */
+  
+  /* Background colors */
+  --aw-color-bg-page: #FFFEF7; /* Warm cream background */
+  --aw-color-bg-page-dark: #2C2C2C; /* Dark charcoal */
+  
+  /* Text colors */
+  --aw-color-text-page: #3A3A3A; /* Dark gray */
+  --aw-color-text-muted: #7A7A7A; /* Medium gray */
+  
+  /* Additional bee-inspired colors */
+  --aw-color-bee-black: #2D2D2D; /* Bee stripes */
+  --aw-color-honey: #FFB347; /* Honey orange */
+  --aw-color-wing-blue: #B8E6FF; /* Lighter wing blue */
+}
+
+[data-theme="dark"] {
+  --aw-color-bg-page: #1A1A1A;
+  --aw-color-bg-page-dark: #0F0F0F;
+  --aw-color-text-page: #E5E5E5;
+  --aw-color-text-muted: #A0A0A0;
+}
+
+@layer utilities {
+  .bg-page {
+    background-color: var(--aw-color-bg-page);
+  }
+  .bg-dark {
+    background-color: var(--aw-color-bg-page-dark);
+  }
+  .bg-light {
+    background-color: var(--aw-color-bg-page);
+  }
+  .text-page {
+    color: var(--aw-color-text-page);
+  }
+  .text-muted {
+    color: var(--aw-color-text-muted);
+  }
+  
+  /* New bee-themed utilities */
+  .bg-bee-yellow {
+    background-color: var(--aw-color-primary);
+  }
+  .bg-bee-coral {
+    background-color: var(--aw-color-secondary);
+  }
+  .bg-bee-blue {
+    background-color: var(--aw-color-accent);
+  }
+  .text-bee-coral {
+    color: var(--aw-color-secondary);
+  }
+  .text-bee-yellow {
+    color: var(--aw-color-primary);
+  }
+  .border-bee-coral {
+    border-color: var(--aw-color-secondary);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full border-gray-300 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-2 focus:ring-offset-2 hover:shadow-lg cursor-pointer;
+    
+    /* Bee-themed focus states */
+    @apply focus:ring-yellow-400 focus:ring-offset-yellow-100;
+  }
+
+  .btn-primary {
+    @apply btn font-semibold text-white border-transparent shadow-md;
+    background: linear-gradient(135deg, var(--aw-color-primary) 0%, var(--aw-color-honey) 100%);
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--aw-color-honey) 0%, var(--aw-color-primary) 100%);
+      @apply shadow-lg transform -translate-y-0.5;
+    }
+    
+    &:active {
+      @apply transform translate-y-0;
+    }
+  }
+
+  .btn-secondary {
+    @apply btn border-2;
+    border-color: var(--aw-color-secondary);
+    color: var(--aw-color-secondary);
+    
+    &:hover {
+      background-color: var(--aw-color-secondary);
+      @apply text-white shadow-md;
+    }
+  }
+
+  .btn-tertiary {
+    @apply btn border-none shadow-none;
+    color: var(--aw-color-text-muted);
+    
+    &:hover {
+      color: var(--aw-color-secondary);
+      @apply bg-yellow-50;
+    }
+    
+    .dark &:hover {
+      @apply bg-gray-800 text-white;
+    }
+  }
+  
+  /* Bee-themed accent button */
+  .btn-bee-accent {
+    @apply btn font-medium text-white border-transparent;
+    background: linear-gradient(135deg, var(--aw-color-accent) 0%, #5DADE2 100%);
+    
+    &:hover {
+      @apply shadow-lg transform -translate-y-0.5;
+      background: linear-gradient(135deg, #5DADE2 0%, var(--aw-color-accent) 100%);
+    }
+  }
+}
+
+/* Header styles with bee theme */
+#header.scroll > div:first-child {
+  @apply md:backdrop-blur-md;
+  background-color: rgba(255, 254, 247, 0.95);
+  box-shadow: 0 0.375rem 1.5rem 0 rgba(244, 208, 63, 0.15);
+  border-bottom: 1px solid rgba(244, 208, 63, 0.1);
+}
+
+.dark #header.scroll > div:first-child,
+#header.scroll.dark > div:first-child {
+  @apply bg-page;
+  background-color: rgba(26, 26, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 107, 157, 0.2);
+  box-shadow: none;
+}
+
+#header.expanded nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 70px !important;
+  padding: 0 5px;
+  background: linear-gradient(180deg, var(--aw-color-bg-page) 0%, rgba(255, 254, 247, 0.98) 100%);
+}
+
+/* Dropdown menus with bee theme */
+.dropdown:focus .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+  display: block;
+  @apply shadow-xl;
+  border: 1px solid rgba(244, 208, 63, 0.2);
+  background: var(--aw-color-bg-page);
+}
+
+/* Icon styles */
+[astro-icon].icon-light > * {
+  stroke-width: 1.2;
+}
+
+[astro-icon].icon-bold > * {
+  stroke-width: 2.4;
+}
+
+[astro-icon].icon-bee > * {
+  stroke: var(--aw-color-secondary);
+  fill: var(--aw-color-primary);
+}
+
+/* Mobile menu toggle with bee colors */
+[data-aw-toggle-menu] path {
+  @apply transition;
+  stroke: var(--aw-color-text-page);
+}
+
+[data-aw-toggle-menu].expanded g > path:first-child {
+  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+  stroke: var(--aw-color-secondary);
+}
+
+[data-aw-toggle-menu].expanded g > path:last-child {
+  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+  stroke: var(--aw-color-secondary);
+}
+
+/* Typography improvements */
+.dd *:first-child {
+  margin-top: 0;
+}
+
+/* Additional bee-themed components */
+.bee-gradient-bg {
+  background: linear-gradient(135deg, 
+    var(--aw-color-primary) 0%, 
+    var(--aw-color-honey) 50%, 
+    var(--aw-color-secondary) 100%);
+}
+
+.bee-card {
+  @apply bg-white rounded-2xl shadow-md border border-yellow-200 p-6;
+  transition: all 0.3s ease;
+}
+
+.bee-card:hover {
+  @apply shadow-xl transform -translate-y-1;
+  border-color: var(--aw-color-secondary);
+}
+
+.bee-text-gradient {
+  background: linear-gradient(135deg, var(--aw-color-secondary), var(--aw-color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
