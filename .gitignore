@@ -11,6 +11,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# VS-code specific stuff
+*.code-workspace
 
 # environment variables
 .env

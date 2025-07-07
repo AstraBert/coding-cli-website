@@ -5,7 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'browser-ai',
+  title: 'coding-cli',
 };
 ---
 
@@ -13,27 +13,29 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero
-    tagline="browser-ai"
-    title="A New Browsing Experience"
-    subtitle="Browse the web and get real-time AI summaries of the websites you are visiting!"
+    tagline="coding-cli"
+    title="Dev-Friendly CLI Assistant"
+    subtitle="Explain, edit and fix your files with AI directly from your terminal"
     actions={[
-      { variant: 'primary', text: 'Get it now!', href: 'https://github.com/AstraBert/browser-ai', icon: 'tabler:arrow-right' },
-      { text: 'Learn more', href: 'https://github.com/AstraBert/browser-ai/tree/main?tab=readme-ov-file#how-it-works' },
+      { variant: 'primary', text: 'npm install @cle-does-things/coding-cli', href: 'https://github.com/AstraBert/coding-cli', icon: 'tabler:arrow-right' },
+      { text: 'npx @cle-does-things/coding-cli info', href: 'https://github.com/AstraBert/coding-cli/tree/main/README.md' },
     ]}
     image={{
-      src: '~/assets/images/browser-ai.png',
-      alt: 'browser-ai logo',
+      src: '~/assets/images/coding-cli.png',
+      alt: 'coding-cli logo',
+      width: 500,
+      height: 500,
     }}
   />
 
   <CallToAction
-    title="Get the browser-ai app now!"
-    subtitle="Do you want to have a really AI-assisted browsing experience? Do you want to have the freedom to navigate your favorite websites, while still getting a quick overview of them? Get the app now!"
+    title="Get coding-cli now!"
+    subtitle="coding-cli is a dev-friendly AI assistant that lives in your terminal, suitable for all levels of expertise and with sharp editing, fixing and explaining capabilities. Curious to try it out?"
     actions={[
       {
         variant: 'primary',
         text: 'To the app',
-        href: 'https://github.com/AstraBert/browser-ai',
+        href: 'https://github.com/AstraBert/coding-cli',
         icon: 'tabler:arrow-right',
       },
     ]}

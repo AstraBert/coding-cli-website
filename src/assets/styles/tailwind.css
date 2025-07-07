@@ -5,8 +5,8 @@
 /* Custom CSS Variables - Bee Theme Colors */
 :root {
   /* Primary colors from the bee image */
-  --aw-color-primary: #F4D03F; /* Bee yellow */
-  --aw-color-secondary: #FF6B9D; /* Coral pink from text */
+  --aw-color-primary: #3f51f4; /* Bee yellow */
+  --aw-color-secondary: #54bb0b; /* Coral pink from text */
   --aw-color-accent: #87CEEB; /* Light blue from wings */
   
   /* Background colors */
@@ -24,10 +24,10 @@
 }
 
 [data-theme="dark"] {
-  --aw-color-bg-page: #1A1A1A;
+  --aw-color-bg-page: #0F0F0F;
   --aw-color-bg-page-dark: #0F0F0F;
-  --aw-color-text-page: #E5E5E5;
-  --aw-color-text-muted: #A0A0A0;
+  --aw-color-text-page: #cec9c9;
+  --aw-color-text-muted: #9f8a8a;
 }
 
 @layer utilities {

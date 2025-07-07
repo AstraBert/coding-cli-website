@@ -1,6 +1,6 @@
 site:
-  name: browser-ai
-  site: 'https://browser.clelia.dev'
+  name: coding-cli
+  site: 'https://cli.clelia.dev'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: browser-ai
-    template: '%s — A New Browsing Experience'
-  description: "\U0001F680 Browse the web and get real-time AI summaries of the websites you are visiting"
+    default: conding-cli
+    template: '%s — Dev Friendly CLI Assistant'
+  description: "\U0001F680 A dev-friendly AI assistat that lives in your terminal"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: browser-ai
+    site_name: coding-cli
     images:
       - url: '~/assets/images/default.png'
         width: 1200

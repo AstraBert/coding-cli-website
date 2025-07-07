@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'GitHub Repository',
-      href: 'https://github.com/AstraBert/browser-ai'
+      href: 'https://github.com/AstraBert/coding-cli'
     },
   ],
   actions: [{ text: 'Support this project', href: 'https://github.com/sponsors/AstraBert', target: '_blank' }],
@@ -12,7 +12,7 @@ export const headerData = {
 
 export const footerData = {
   secondaryLinks: [
-    { text: 'GitHub Repo', href: 'https://github.com/AstraBert/browser-ai' },
+    { text: 'GitHub Repo', href: 'https://github.com/AstraBert/coding-cli' },
     { text: 'All my links', href: 'https://link.clelia.dev' },
     { text: 'Personal Website', href: 'https://clelia.dev' },
   ],
@@ -24,6 +24,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/AstraBert' },
   ],
   footNote: `
-    Made with <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> Astro onWidget</a> · All rights reserved.
+    Made with <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> Astro onWidget</a> by Clelia Astra Bertelli · All rights reserved.
   `,
 };
